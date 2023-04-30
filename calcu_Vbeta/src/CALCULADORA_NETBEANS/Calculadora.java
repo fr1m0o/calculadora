@@ -1,6 +1,7 @@
 
 package CALCULADORA_NETBEANS;
 
+import java.awt.BorderLayout;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -17,6 +18,7 @@ public class Calculadora extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Calculadora");
         this.setLocationRelativeTo(null);
+            
     }
 
     /**
@@ -51,6 +53,7 @@ public class Calculadora extends javax.swing.JFrame {
         Boton_igual = new javax.swing.JButton();
         Etiqueta_Numeros = new javax.swing.JLabel();
         etiqueta2_numeros = new javax.swing.JLabel();
+        boton_modos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -253,6 +256,18 @@ public class Calculadora extends javax.swing.JFrame {
         etiqueta2_numeros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiqueta2_numeros.setText("0");
 
+        boton_modos.setText("modos");
+        boton_modos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boton_modosMouseClicked(evt);
+            }
+        });
+        boton_modos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_modosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -264,13 +279,18 @@ public class Calculadora extends javax.swing.JFrame {
                     .addComponent(etiqueta2_numeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Etiqueta_Numeros, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 8, Short.MAX_VALUE)))
+                        .addGap(0, 16, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(boton_modos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(boton_modos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(etiqueta2_numeros)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Etiqueta_Numeros, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -533,6 +553,16 @@ public class Calculadora extends javax.swing.JFrame {
         Etiqueta_Numeros.setText(cadenas_numeros);
     }//GEN-LAST:event_Boton_CEActionPerformed
 
+    private void boton_modosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_modosActionPerformed
+        // 
+    }//GEN-LAST:event_boton_modosActionPerformed
+
+    private void boton_modosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_modosMouseClicked
+ vistas vistas= new vistas();
+ vistas.setVisible(true);
+ this.dispose();
+    }//GEN-LAST:event_boton_modosMouseClicked
+
     
    
     public static void main(String args[]) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -591,6 +621,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton Boton_raiz;
     private javax.swing.JLabel Etiqueta_Numeros;
     private javax.swing.JPanel Panel_calculadora;
+    private javax.swing.JButton boton_modos;
     private javax.swing.JLabel etiqueta2_numeros;
     // End of variables declaration//GEN-END:variables
 }
